@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -47,6 +48,10 @@ public class DetailActivity extends AppCompatActivity {
         fetchDataFromRoom();
         initRecyclerView();
         setAdapter();
+    }
+    @Override
+    public void onLongClick(int position) {
+        FragmentManager fm = getSupportFragmentManager();
     }
 
     private void fetchDataFromRoom() {
